@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Product Type</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="accordion__body">
+        <div class="bilinfo">
+          <form [formGroup]="productTypeFormGroup" (ngSubmit)="handleSubmitProductType($event)">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="single-input">
+                  <label for="">Product Type Name</label>
+                  <input type="text" placeholder="Input Product Type Name" name="product-type-name" formControlName="productTypeName">
+                </div>
+              </div>
+              <div class="col-md-12 text-center">
+                <div class="contact-btn">
+                  <button type="submit" class="fv-btn" [disabled]="isDisabled">{{btnSubmitName}}</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="form-output">
+        <p class="form-messege"></p>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

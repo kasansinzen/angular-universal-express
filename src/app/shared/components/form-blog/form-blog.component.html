@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="accordion__body">
+      <div class="bilinfo">
+        <form [formGroup]="blogFormGroup" (ngSubmit)="handleSubmitBlog($event)">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="single-input mt-0">
+                <label for="">Blog Type</label>
+                <ng-select
+                  [items]="blogTypeResult"
+                  [multiple]="true"
+                  [closeOnSelect]="false"
+                  [searchable]="false"
+                  bindLabel="blog_type_name"
+                  bindValue="blog_type_id"
+                  placeholder="Select Blog Type"
+                  formControlName="blogTypeId"
+                ></ng-select>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="single-input">
+                <label for="">Title</label>
+                <input type="text" placeholder="" formControlName="title">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="single-input">
+                <label for="">Decription</label>
+                <textarea placeholder="Input Product Decription" class="bg-white" name="product-description" formControlName="description"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="single-input">
+                <label for="">Content</label>
+                <ckeditor
+                  formControlName="content"
+                ></ckeditor>
+              </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="contact-btn">
+                <button type="submit" class="fv-btn" [disabled]="isDisabled">{{btnSubmitName}}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="form-output">
+      <p class="form-messege"></p>
+    </div>
+  </div>
+</div>

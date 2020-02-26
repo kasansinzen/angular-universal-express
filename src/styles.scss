@@ -1,0 +1,99 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+$green1: #003d00;
+$green1_fade: #003d00db;
+$green2: #dfefd8;
+$headerColor: #a97d00;
+$headerColorFade: #a97d00c7;
+$oddColor: #303030;
+$evenColor: #383838;
+$white: #ffffff;
+$black1: #303030;
+$black2: rgba(255, 255, 255, 0.03);
+
+header{
+  background-color: $headerColor;
+  .sticky__header.scroll-header{
+    background-color: $headerColorFade;
+  }
+  .main__menu > li > a {
+    // color: $white !important;
+  }
+  .main__menu ul.dropdown li a{
+    color: $green1 !important;
+  }
+  ul.dropdown.mega_dropdown li {
+    border-bottom: 1px solid transparent !important;
+  }
+  ul.dropdown li{
+    border-bottom: 1px solid $headerColor !important;
+  }
+}
+footer{
+  background-color: $headerColor !important;
+  a{
+    color: $white !important;
+  }
+  ul.dropdown.mega_dropdown li {
+    border-bottom: 1px solid transparent !important;
+  }
+  ul.dropdown li{
+    border-bottom: 1px solid $headerColor !important;
+  }
+}
+#scrollUp{
+  background-color: $green1_fade !important;
+}
+
+.bg-white{
+  background-color: $white !important;
+}
+.bg-black1{
+  background-color: $black1 !important;
+}
+.bg-black2{
+  background-color: $black2 !important;
+}
+.bg-green-1{
+  background-color: $green1 !important;
+}
+.bg-green-2{
+  background-color: $green2 !important;
+}
+.bg-green-3{
+  background-color: $evenColor !important;
+}
+.bg-red-1{
+  background-color: $headerColor !important;
+}
+.bg-even{
+  background-color: $evenColor !important;
+}
+.bg-odd{
+  background-color: $oddColor !important;
+}
+
+.text-white{
+  color: $white !important;
+}
+
+.border-red-1{
+  border-color: $headerColor !important;
+}
+
+.single-input textarea{
+  background-color: $white !important;
+  line-height: 40px;
+  padding: 0 15px;
+  font-family: "poppins";
+  transition: all 0.3s ease-in-out 0s;
+  border: 1px solid #888;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// .mat-slide-toggle-bar {
+//   background-color: rgba(0, 0, 0, 0.38);
+// }
+.product__small__images img{
+  max-width: 86px;
+}

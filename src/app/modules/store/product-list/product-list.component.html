@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <form action="#">
+      <div class="table-content table-responsive">
+        <table class="table-store">
+          <thead>
+            <tr>
+              <th class="product-thumbnail">products</th>
+              <th class="product-name">name of products</th>
+              <th class="product-price">Price</th>
+              <th class="product-quantity">Quantity</th>
+              <th class="product-subtotal">Total</th>
+              <th class="product-status">Status</th>
+              <th class="product-remove">
+                <div class="buttons-cart">
+                  <a [routerLink]="['add']"><i class="fa fa-plus fa-5x"></i></a>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productResult">
+              <td class="product-thumbnail">
+                <a [routerLink]="">
+                  <!-- <img class="img" src="/assets/images/product-2/cart-img/1.jpg" alt="product img" /> -->
+                  <img [src]="product.product_profile" (error)="defaultProductImage($event)" alt="product images" class="img-responsive">
+                </a>
+              </td>
+              <td class="product-name">
+                <a href="#">{{product.product_name}}</a>
+                <ul class="pro__prize">
+                  <!-- <li class="old__prize">{{product.price_original | number}} ฿</li>
+                  <li>{{product.price | number}} ฿</li> -->
+                </ul>
+              </td>
+              <td><span class="amount">{{product.price | number}} ฿</span></td>
+              <td><span class="amount">{{product.qty| number}}</span></td>
+              <td>{{(product.price * product.qty) | number}} ฿</td>
+              <td>
+                <mat-slide-toggle [checked]="product.status == true" (change)="handleChangeSliceToggle($event, product.product_id)">{{product.status ? "ON" : "OFF"}}</mat-slide-toggle>
+              </td>
+              <td class="product-remove"><a [routerLink]="['edit', product.product_id]"><i class="fa fa-edit"></i></a> | <a [routerLink]="" (click)="handleClickDestroyProduct($event, product.product_id)"><i class="fa fa-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>

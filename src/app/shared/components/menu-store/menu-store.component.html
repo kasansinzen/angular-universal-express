@@ -1,0 +1,10 @@
+<div class="htc__product__leftsidebar">
+  <!-- Start Category Area -->
+  <div class="htc__category">
+    <h4 class="title__line--4">categories</h4>
+    <ul class="ht__cat__list">
+      <li *ngFor="let storeMenu of storeMenuResult"><a [routerLink]="[storeMenu.url]" class="breadcrumb-item">{{storeMenu.text}}</a></li>
+    </ul>
+  </div>
+  <!-- End Category Area -->
+</div>

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="form-group">
+      <div class="category">
+        <div class="ht__cat__thumb text-center">
+          <img [src]="productResult.product_profile" (error)="defaultProductImage($event)" alt="product images" class="img-responsive">
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <a pageScroll href="#formUploadEl" mat-raised-button color="accent">Select Image Profile</a>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<app-form-product
+  form-type="edit"
+  [product-id]="productId"
+></app-form-product>
+<hr>
+<app-form-uploads
+  id="formUploadEl"
+  [product-id]="productId"
+  (setProfile)="setProfile($event)"
+></app-form-uploads>

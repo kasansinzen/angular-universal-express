@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group">
+      <div class="category">
+        <div class="ht__cat__thumb text-center">
+          <img [src]="filesPathPreiview" (error)="defaultBlogImage($event)" alt="blog images" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isUpload" class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="single-input">
+          <label for="">Upload Banner Blog</label>
+          <input type="file" class="form-control" (change)="handleChangeUploadBanner($event)">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="contact-btn">
+          <button type="button" class="fv-btn" [disabled]="isDisabled" (click)="handleClickUpload($event)">Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isUpload" class="row">
+  <div class="col-md-12 text-center">
+    <div class="contact-btn">
+      <button type="button" class="fv-btn" [disabled]="isDisabled" (click)="handleClickRemove($event)">Remove</button>
+    </div>
+  </div>
+</div>

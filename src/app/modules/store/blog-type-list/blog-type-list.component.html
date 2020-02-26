@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <form action="#">
+      <div class="table-content table-responsive">
+        <table class="table-store">
+          <thead>
+            <tr>
+              <th class="product-name">No.</th>
+              <th class="product-name">Blog Type</th>
+              <th class="product-name">Date Created</th>
+              <th class="product-remove">
+                <div class="buttons-cart">
+                  <a [routerLink]="" (click)="handleClickOpenFormBlogTypeDialog($event, 'add')"><i class="fa fa-plus fa-5x"></i></a>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let blogType of blogTypeResult; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{blogType.blog_type_name}}</td>
+              <td>{{blogType.date_created}}</td>
+              <td class="product-remove">
+                <a [routerLink]="" (click)="handleClickOpenFormBlogTypeDialog($event, 'edit', blogType.blog_type_id, blogType.blog_type_name)">
+                  <i class="fa fa-edit"></i>
+                </a> | <a [routerLink]="" (click)="handleClickDestroyBlogType($event, blogType.blog_type_id)">
+                  <i class="fa fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>

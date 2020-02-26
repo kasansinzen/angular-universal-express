@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="accordion__body">
+      <div class="bilinfo">
+        <form [formGroup]="addProductFormGroup" (ngSubmit)="handleSubmitProduct($event)">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="single-input mt-0">
+                <label for="">Product Types</label>
+                <ng-select
+                  [items]="productTypeResult"
+                  [multiple]="true"
+                  [closeOnSelect]="false"
+                  [searchable]="false"
+                  bindLabel="product_type_name"
+                  bindValue="product_type_id"
+                  placeholder="Select Product Type"
+                  formControlName="productTypeId"
+                ></ng-select>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="single-input">
+                <label for="">Product Name</label>
+                <input type="text" placeholder="Input Product Name" name="product-name" formControlName="productName">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-input">
+                <label for="">Price</label>
+                <input type="number" placeholder="" name="product-price" formControlName="price">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-input">
+                <label for="">Qty</label>
+                <input type="number" placeholder="" name="product-qty" formControlName="qty">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="single-input">
+                <label for="">Detail</label>
+                <textarea placeholder="Input Product Detail" class="bg-white" name="product-description" formControlName="detail"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="single-input">
+                <label for="">Decription</label>
+                <ckeditor
+                  formControlName="description"
+                ></ckeditor>
+              </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="contact-btn">
+                <button type="submit" class="fv-btn">{{btnSubmitName}}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="form-output">
+      <p class="form-messege"></p>
+    </div>
+  </div>
+</div>

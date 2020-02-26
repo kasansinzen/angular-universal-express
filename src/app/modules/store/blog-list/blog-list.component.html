@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <form action="#">
+      <div class="table-content table-responsive">
+        <table class="table-store">
+          <thead>
+            <tr>
+              <th class="product-thumbnail">blog thumbnail</th>
+              <th class="">title</th>
+              <th class="">date</th>
+              <th class="product-status">Status</th>
+              <th class="product-remove">
+                <div class="buttons-cart">
+                  <a [routerLink]="['add']"><i class="fa fa-plus fa-5x"></i></a>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let blog of blogResult">
+              <td class="product-thumbnail">
+                <a href="#"><img src="/assets/images/product-2/cart-img/1.jpg" class="img" alt="product img" /></a></td>
+              <td class="product-name"><a href="#">{{blog.title}}</a></td>
+              <td class="product-quantity"><span class="amount">{{blog.date_created}}</span></td>
+              <td>
+                <mat-slide-toggle [checked]="blog.status == true" (change)="handleChangeSliceToggle($event, blog.blog_id)">{{blog.status ? "ON" : "OFF"}}</mat-slide-toggle>
+              </td>
+              <td class="product-remove"><a [routerLink]="['edit', blog.blog_id]"><i class="fa fa-edit"></i></a> | <a [routerLink]="" (click)="handleClickDestroyBlog($event, blog.blog_id)"><i class="fa fa-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>
